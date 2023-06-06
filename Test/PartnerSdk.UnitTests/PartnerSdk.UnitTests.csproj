@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3D89CB9-D054-454E-AD63-222DD7BF5781}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Store.PartnerCenter.UnitTests</RootNamespace>
+    <AssemblyName>Microsoft.Store.PartnerCenter.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RuntimeIdentifier>win</RuntimeIdentifier>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Build\Signing Keys\InternalKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Moq">
+      <Version>4.2.1510.2205</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Visual-StyleCop.MSBuild">
+      <Version>4.7.59</Version>
+    </PackageReference>
+    <PackageReference Include="System.ComponentModel.Annotations">
+      <Version>5.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Store.PartnerCenter.Fakes">
+      <HintPath>FakesAssemblies\Microsoft.Store.PartnerCenter.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="AggregatePartnerOperationsTests.cs" />
+    <Compile Include="Agreements\AgreementDocumentOperationsTests.cs" />
+    <Compile Include="Agreements\AgreementTemplateCollectionOperationsTests.cs" />
+    <Compile Include="Agreements\AgreementTemplateOperationsTests.cs" />
+    <Compile Include="AuthenticationTokenTests.cs" />
+    <Compile Include="AuditTests.cs" />
+    <Compile Include="Compliance\AgreementSignatureStatusOperationsTests.cs" />
+    <Compile Include="CountryValidationRules\CountryValidationRulesCollectionOperationsTests.cs" />
+    <Compile Include="CountryValidationRules\CountryValidationRulesOperationsTests.cs" />
+    <Compile Include="CusomerDirectoryRoles\DirectoryRoleCollectionOperationsTests.cs" />
+    <Compile Include="CusomerDirectoryRoles\UserMemberCollectionOperationsTest.cs" />
+    <Compile Include="CusomerDirectoryRoles\UserMemberOperationsTests.cs" />
+    <Compile Include="CustomerCollectionOperationsTests.cs" />
+    <Compile Include="CustomerLicenses\CustomerSubscribedSkusTests.cs" />
+    <Compile Include="CustomerLicenses\CustomerUserLicenseOperationsTests.cs" />
+    <Compile Include="CustomerServiceCosts\ServiceCostsCollectionOperationsTests.cs" />
+    <Compile Include="CustomerUsers\CustomerUserOperationsTests.cs" />
+    <Compile Include="DefaultPartnerServiceErrorHandlerTests.cs" />
+    <Compile Include="DevicesDeployment\ConfigurationPolicyOperationsTests.cs" />
+    <Compile Include="DevicesDeployment\DeviceOperationsTests.cs" />
+    <Compile Include="Domains\DomainCollectionOperationsTests.cs" />
+    <Compile Include="Domains\DomainOperationsTests.cs" />
+    <Compile Include="ExponentialRetryPolicyTests.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="NewCommerceMigrations\NewCommerceMigrationOperationsTests.cs" />
+    <Compile Include="PartnerServiceRequestsOperationsTests.cs" />
+    <Compile Include="ProductPromotions\ProductPromotionCollectionByCountryBySegmentOperationsTests.cs" />
+    <Compile Include="ProductPromotions\ProductPromotionCollectionByCountryOperationsTests.cs" />
+    <Compile Include="ProductPromotions\ProductPromotionCollectionOperationsTests.cs" />
+    <Compile Include="ProductPromotions\ProductPromotionOperationsTests.cs" />
+    <Compile Include="Products\AvailabilityCollectionByTargetSegmentOperationsTests.cs" />
+    <Compile Include="Products\ProductCollectionByCountryByTargetViewByTargetSegmentOperationsTests.cs" />
+    <Compile Include="Products\ProductCollectionByCountryByTargetViewOperationsTests.cs" />
+    <Compile Include="Products\ProductOperationsTests.cs" />
+    <Compile Include="Products\ProductCollectionByCountryOperationsTests.cs" />
+    <Compile Include="Products\ProductCollectionOperationsTests.cs" />
+    <Compile Include="Products\SkuCollectionByTargetSegmentOperationsTests.cs" />
+    <Compile Include="Products\AvailabilityOperationsTests.cs" />
+    <Compile Include="Products\AvailabilityCollectionOperationsTests.cs" />
+    <Compile Include="Products\SkuOperationsTests.cs" />
+    <Compile Include="Products\SkuCollectionOperationsTests.cs" />
+    <Compile Include="Profiles\LegalBusinessProfileOperationsTests.cs" />
+    <Compile Include="SelfServePolicies\SelfServePoliciesCollectionOperationsTests.cs" />
+    <Compile Include="SelfServePolicies\SelfServePolicyOperationsTests.cs" />
+    <Compile Include="SubscriptionProvisioningStatusTests.cs" />
+    <Compile Include="SubscriptionConversionTests.cs" />
+    <Compile Include="SubscriptionSupportContactTests.cs" />
+    <Compile Include="SubscriptionUpgradeTests.cs" />
+    <Compile Include="InvoiceTests.cs" />
+    <Compile Include="LinearRetryPolicyTests.cs" />
+    <Compile Include="LogManagerTests.cs" />
+    <Compile Include="MpnProfileOperationsTests.cs" />
+    <Compile Include="PartnerServiceHttpMessageHandlerTests.cs" />
+    <Compile Include="PartnerServiceProxyTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetryableHttpCallTests.cs" />
+    <Compile Include="SdkConfigurationTests.cs" />
+    <Compile Include="ValidationStatus\ValidationStatusOperationsTests.cs" />
+    <Compile Include="Validations\ValidationOperationsTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\PartnerSdk.Models\PartnerSdk.Models.csproj">
+      <Project>{b474b775-5d0f-4582-879d-b2838c4ba951}</Project>
+      <Name>PartnerSdk.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\PartnerSdk\PartnerSdk.csproj">
+      <Project>{09c5ea65-3d65-40fe-a39d-d0b117744f44}</Project>
+      <Name>PartnerSdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Fakes Include="Fakes\Microsoft.Store.PartnerCenter.fakes" />
+    <None Include="..\..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

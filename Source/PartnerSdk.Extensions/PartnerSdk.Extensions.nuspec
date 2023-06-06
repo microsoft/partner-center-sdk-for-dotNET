@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Microsoft.Store.PartnerCenter</id>
+    <version>3.4.0</version>
+    <title>Microsoft Partner Center SDK</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft,MicrosoftPartnerCenter</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://partnercenter.microsoft.com/en-us/partner/EULA_Partner_Center_SDK</licenseUrl>
+    <projectUrl>https://partnercenter.microsoft.com</projectUrl>
+    <language>en</language>
+    <description>SDK for accessing Microsoft Partner Center APIs</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>Microsoft Store Partner Center API SDK</tags>
+    <references>
+      <reference file="Microsoft.Store.PartnerCenter.dll" />
+      <reference file="Microsoft.Store.PartnerCenter.Extensions.dll" />
+      <reference file="Microsoft.Store.PartnerCenter.Models.dll" />
+    </references>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="[13.0.1,)" />
+      <dependency id="Microsoft.Identity.Client" version="[4.31.0,)" />
+      <dependency id="System.ComponentModel.Annotations" version="[5.0.0]" />
+      <dependency id="System.Data.DataSetExtensions" version="[4.5.0,)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Microsoft.Store.PartnerCenter.dll" target="lib\netstandard2.0" />
+    <file src="Microsoft.Store.PartnerCenter.Extensions.dll" target="lib\netstandard2.0" />
+    <file src="Microsoft.Store.PartnerCenter.Models.dll" target="lib\netstandard2.0" />
+    <file src="Microsoft.Store.PartnerCenter.xml" target="lib\netstandard2.0" />
+    <file src="Microsoft.Store.PartnerCenter.Extensions.xml" target="lib\netstandard2.0" />
+    <file src="Microsoft.Store.PartnerCenter.Models.xml" target="lib\netstandard2.0" />
+  </files>
+</package>
